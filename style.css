@@ -1,0 +1,124 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-image: url('oswaldo/imagen/Diseño\ sin\ título\ \(3\).png'); /* Cambia la URL si es necesario */
+    background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
+    background-position: center center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    height: 100vh; /* Hace que ocupe toda la altura de la pantalla */
+    display: flex;
+    justify-content: center; /* Centra horizontalmente el contenido */
+    align-items: center;     /* Centra verticalmente el contenido */
+    color: rgb(241, 235, 235);
+    padding: 10px; /* Añade un pequeño margen en la pantalla */
+}
+
+/* Contenedor del formulario */
+.login-container {
+    background-color: rgba(21, 21, 21, 0.7); /* Fondo semitransparente */
+    padding: 30px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 350px; /* Establece un tamaño máximo para que no sea demasiado grande */
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(238, 236, 236, 0.922);
+    border: 1px solid rgba(255, 255, 255, 0.912); /* Borde sutil */
+    margin: 0 auto; /* Asegura que esté centrado correctamente */
+}
+
+/* Título del formulario */
+h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #fff; /* Cambié el color a blanco para mejor contraste */
+    text-align: center; /* Centra el título */
+}
+
+/* Estilos del formulario */
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #fff; /* Cambié el color a blanco para mejorar la visibilidad */
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 5px;
+    background-color: #fff; /* Asegura que los inputs tengan un fondo claro */
+    color: #333; /* Texto oscuro para los inputs */
+}
+
+/* Botón de enviar */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #1b1b1c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2d299b;
+}
+
+/* Mensaje de error */
+#error-message {
+    margin-top: 15px;
+    font-size: 14px;
+    color: rgb(10, 10, 10);
+    display: none;
+}
+
+/* Media Queries para hacer el diseño responsivo */
+
+/* Para pantallas grandes (como en escritorio) */
+@media (min-width: 1024px) {
+    body {
+        background-attachment: fixed; /* Aplica fondo fijo solo en pantallas grandes */
+    }
+}
+
+/* Para pantallas de tabletas y dispositivos más grandes (ancho máximo de 768px) */
+@media (max-width: 768px) {
+    .login-container {
+        width: 90%; /* 90% del ancho de la pantalla */
+        padding: 20px; /* Ajusta el padding para pantallas más pequeñas */
+    }
+
+    /* En pantallas más pequeñas, deshabilita el fondo fijo */
+    body {
+        background-attachment: scroll; /* Desactiva el fondo fijo para dispositivos móviles y tabletas */
+    }
+}
+
+/* Para pantallas más pequeñas, como móviles (ancho máximo de 480px) */
+@media (max-width: 480px) {
+    .login-container {
+        width: 95%; /* El formulario ocupará el 95% del ancho de la pantalla */
+        padding: 15px; /* Ajusta el padding para pantallas muy pequeñas */
+    }
+
+    /* Desactivar el fondo fijo también en pantallas pequeñas */
+    body {
+        background-attachment: scroll; /* Desactiva el fondo fijo */
+    }
+}
