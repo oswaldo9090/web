@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secciones Adaptadas</title>
+    <style>
+        /* Estilo general */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            background-color: #c2c5c7; /* Fondo azul */
+            color: #fff;
+        }
+
+        /* Reproductor de música */
+        .reproductor {
+            width: 15%;
+            background-color: #404041;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 4px 0 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .reproductor audio {
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        /* Contenedor principal */
+        .contenedor {
+            width: 85%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 20px;
+            gap: 10px;
+        }
+
+        /* Cuadros individuales */
+        .cuadro {
+            width: calc(33.33% - 10px); /* Tres cuadros por fila */
+            height: calc(33.33vh - 10px); /* Altura para ajustar a una sola pantalla */
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            display: block; /* Hacer que el cuadro sea un bloque de enlace */
+        }
+
+        .cuadro h3 {
+            margin: 10px 0;
+            font-size: 18px;
+            color: #0a0a0a;
+        }
+
+        /* Zona para que tú escribas */
+        .zona-escritura {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #333;
+            background-color: #f7f7f7;
+            padding: 10px;
+            border-radius: 5px;
+            height: 100px; /* Altura fija */
+            overflow: hidden; /* Elimina el scroll */
+            border: 1px solid #ddd;
+            resize: none; /* Impide que se pueda redimensionar el área de texto */
+            white-space: pre-wrap; /* Hace que el texto se ajuste dentro del área */
+            pointer-events: none; /* Desactiva la edición del texto */
+        }
+
+        .cuadro:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Estilo para quitar subrayado en los enlaces */
+        a {
+            text-decoration: none; /* Elimina el subrayado del enlace */
+            color: inherit; /* Mantiene el color del texto como en el padre (cuadro) */
+        }
+
+        /* Estilos específicos para dispositivos móviles */
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+
+            .reproductor {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 10px;
+                text-align: center;
+                box-shadow: none;
+            }
+
+            .contenedor {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .cuadro {
+                width: 80%;
+                height: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .cuadro {
+                width: 90%;
+                height: auto;
+            }
+
+            .reproductor {
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+    <!-- Contenedor de cuadros -->
+    <div class="contenedor">
+        <a href="seccion1.html" class="cuadro">
+            <h3>cosmos interior</h3>
+            <textarea class="zona-escritura" readonly>
+califica tu dia y opcionalmente explica por que lo fue asi. (opcional)
+            </textarea>
+        </a>
+        <a href="seccion2.html" class="cuadro">
+            <h3>constelacion de palabras</h3>
+            <textarea class="zona-escritura" readonly>
+en base a tu dia te va decir una frase, solo añade la fecha en que ya calificaste tu dia. (opcional)
+            </textarea>
+        </a>
+        <a href="seccion3.html" class="cuadro">
+            <h3>eclipse de momentos</h3>
+            <textarea class="zona-escritura" readonly>
+sube tus fotitos que te hagan feliz y puedes añadir algo de descripcion. (opcional)
+            </textarea>
+        </a>
+        <a href="seccion4.html" class="cuadro">
+            <h3>resonancia cosmica</h3>
+            <textarea class="zona-escritura" readonly>
+de preferecncia añade una cancion por dia para yo escucharla. (opcional)
+            </textarea>
+        </a>
+        <a href="seccion5.html" class="cuadro">
+            <h3>heroe galactico</h3>
+            <textarea class="zona-escritura" readonly>
+escribe tus nuevos logros que tuviste al dia, semana o mes. (opcional)
+            </textarea>
+        </a>
+        <a href="seccion6.html" class="cuadro">
+            <h3>espacio de aventuras</h3>
+            <textarea class="zona-escritura" readonly>
+cositas que te gustaria tomar como una aventura, como ir a tal lugar y asi. (opcional)
+            </textarea>
+        </a>
+        <a href="seccion7.html" class="cuadro">
+            <h3>cometa de sabores</h3>
+            <textarea class="zona-escritura" readonly>
+si recuerdas que comiste en tu dia, añadelo. (opcional)
+            </textarea>
+        </a>
+        <a href="seccion8.html" class="cuadro">
+            <h3>cúmulo de curiosidades</h3>
+            <textarea class="zona-escritura" readonly>
+datos curiosos que a la mera y pues son interesantes. (opcional)
+            </textarea>
+        </a>
+        <a href="seccion9.html" class="cuadro">
+            <h3>galaxia de mensajes</h3>
+            <textarea class="zona-escritura" readonly>
+podras escribirme cosas como recomendaciones para mejorarlo. (opcional)
+            </textarea>
+        </a>
+    </div>
+</body>
+</html>

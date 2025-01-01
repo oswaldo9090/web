@@ -1,0 +1,95 @@
+/* Base general */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5dc; /* Beige */
+}
+
+/* Contenedor principal */
+.contenedor {
+    text-align: center;
+    max-width: 800px;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Título */
+h1 {
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+/* Contenedor de entrada */
+.input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+/* Entradas de texto y textarea */
+input[type="text"], textarea {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    resize: none;
+}
+
+textarea {
+    height: 100px;
+}
+
+/* Botones */
+button {
+    padding: 12px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* Contenedor de aventuras */
+.adventures-container {
+    text-align: left;
+    margin-top: 20px;
+    max-height: 300px;
+    overflow-y: auto;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+}
+
+/* Estilo de cada aventura */
+.adventure {
+    margin-bottom: 15px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Borrar aventuras */
+.clear-adventures-btn {
+    margin-top: 10px;
+    background-color: #ff4d4d;
+}
+
+.clear-adventures-btn:hover {
+    background-color: #e60000;
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>:)</title>
+    <link rel="stylesheet" href="politicas.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+            overflow: hidden;
+        }
+
+        .contenedor {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 800px;
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .politicas {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .botones button {
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .botones button:hover {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .gif {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100px;
+            height: auto;
+        }
+
+        .gif.izquierda {
+            left: 50px;
+        }
+
+        .gif.derecha {
+            right: 50px;
+        }
+    </style>
+</head>
+<body>
+    <!-- GIF Izquierdo -->
+    <img src="WhatsApp-Video-2024-12-27-at-12.46.03-AM.gif" alt="GIF animado izquierda" class="gif izquierda">>
+
+    <div class="contenedor">
+        <h1> :)</h1>
+        <div class="politicas">
+            <p>carli carli carli, antes que todo, feliz año nuevo.
+                <p>cabe aclarar que esto lo hago porque quiero, tu podras cerrar la pagina el dia que tu quieras, he decidido hacer ciertas cosas y no aguantarmelas como lo hice unos meses, como t dije lo hago pq quiero.</p>
+                <p>la pagina estara abierta 24/7 del año, habra momentos en las que no debido a actualizaciones que ire haciendo, esto si va ser dia a dia probablemente. otra de las razones por las que la hago es para si dejamos hablar durante un tiempo, cosa que ojala no, pues tu registras cosas aqui, yo tambien tengo acceso para ver las cosas que te pasan, si estas bien y asi, a lo mejor y dices, por que de esta forma y no normal con un dm o algo asi, pues porque no, esa es la repuesta.</p>
+                <p>es todo carliñi, gracias por todo <3 </p>
+            </p>
+           
+        </div>
+
+        <div class="botones">
+            <button onclick="aceptar()">acepto ver todo</button>
+            <button onclick="rechazar()">no, no acepto</button>
+        </div>
+
+        
+    </div>
+
+    <!-- GIF Derecho -->
+    <img src="WhatsApp-Video-2024-12-27-at-12.46.03-AM.gif" alt="GIF animado derecha" class="gif derecha">
+
+    <script>
+        function aceptar() {
+            // Lógica cuando el usuario acepta las políticas
+            alert("Has aceptado las políticas de privacidad.");
+            window.location.href = "dashboard.html";  // Redirigir a la página de inicio (o lo que sea que necesites)
+        }
+
+        function rechazar() {
+            // Lógica cuando el usuario no acepta las políticas
+            alert("No has aceptado las políticas de privacidad.");
+            window.location.href = "index.html";  // Redirigir a la página de inicio de sesión
+        }
+    </script>
+
+<script>
+    function aceptar() {
+        // Redirigir a la nueva página
+        window.location.href = "nueva-pagina.html";  // Cambia esta URL por la página deseada
+    }
+
+    function rechazar() {
+        // Lógica cuando el usuario no acepta las políticas
+        alert("No has aceptado las políticas de privacidad.");
+        window.location.href = "index.html";  // Redirigir a la página de inicio de sesión
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: beige;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.contenedor {
+    text-align: center;
+    position: relative;
+}
+
+.emoji-zone {
+    margin-bottom: 20px;
+}
+
+.emoji {
+    font-size: 50px;
+    margin: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.emoji:hover {
+    transform: scale(1.2);
+}
+
+.frase-container {
+    font-size: 24px;
+    color: #333;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff3e6;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.historial-container {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.historial-container h4 {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.historial-container ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.historial-container ul li {
+    margin: 5px 0;
+}
+
+.fireworks {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>subir fotos y descripciones</title>
+    <link rel="stylesheet" href="seccion3.css">
+</head>
+<body>
+    <div class="contenedor">
+        <h1>sube una fotico</h1>
+        <div class="upload-container">
+            <input type="file" id="file-input" accept="image/*">
+            <textarea id="description" placeholder="Escribe una descripción..."></textarea>
+            <button id="upload-btn" class="upload-btn">Subir Foto</button>
+        </div>
+        <div id="photo-container" class="photo-container"></div>
+        <canvas id="fireworks" class="fireworks"></canvas>
+    </div>
+    <script src="seccion3.js"></script>
+</body>
+</html>

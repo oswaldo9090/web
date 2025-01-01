@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>evaluar tu día - Cosmos Interior</title>
+    <style>
+        /* Estilo general */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #c2c5c7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Contenedor principal */
+        .contenedor {
+            background-color: #fff;
+            width: 80%;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 1.5s forwards;
+        }
+
+        /* Título */
+        h1 {
+            font-size: 36px;
+            color: #808081;
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeIn 2s 0.5s forwards;
+        }
+
+        /* Descripción del día */
+        p {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeIn 2s 1s forwards;
+        }
+
+        /* Contenedor para los botones de emojis */
+        .emoji-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeIn 2s 1.5s forwards;
+        }
+
+        .emoji-buttons button {
+            font-size: 32px;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        /* Área de texto para calificar el día */
+        textarea {
+            width: 100%;
+            height: 150px;
+            font-size: 16px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            resize: none;
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeIn 2s 2s forwards;
+        }
+
+        /* Botón para enviar la evaluación */
+        .boton {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            opacity: 0;
+            animation: fadeIn 2s 2.5s forwards;
+        }
+
+        .boton:hover {
+            background-color: #121213;
+        }
+
+        /* Botón para borrar el historial */
+        .boton-borrar {
+            background-color: #111111;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        .boton-borrar:hover {
+            background-color: #1d1c1c;
+        }
+
+        /* Estilo de los mensajes en el chat */
+        .chat {
+            margin-top: 20px;
+            text-align: left;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .chat-message {
+            margin-bottom: 15px;
+            background-color: #f7f7f7;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 14px;
+            position: relative;
+        }
+
+        .chat-message .fecha {
+            font-size: 12px;
+            color: #777;
+            position: absolute;
+            bottom: 5px;
+            right: 10px;
+        }
+
+        /* Animación de fadeIn */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Contenedor principal -->
+    <div class="contenedor">
+        <h1>evaluar tu día</h1>
+        <p>selecciona el emoji y luego escribe. (Opcional)</p>
+
+        <!-- Botones de Emojis -->
+        <div class="emoji-buttons">
+            <button onclick="calificarDia('Muy Malo')">😞</button>
+            <button onclick="calificarDia('Malo')">😕</button>
+            <button onclick="calificarDia('Normal')">😐</button>
+            <button onclick="calificarDia('Bueno')">🙂</button>
+            <button onclick="calificarDia('Muy Bueno')">😊</button>
+        </div>
+
+        <!-- Área de texto para justificación -->
+        <textarea id="justificacion" placeholder="maaa, por queeee..."></textarea>
+        
+        <!-- Botón para guardar evaluación -->
+        <button class="boton" onclick="guardarEvaluacion()">Enviar Evaluación</button>
+
+        <!-- Botón para borrar el historial -->
+        <button class="boton-borrar" onclick="borrarHistorial()">Borrar Historial</button>
+
+        <!-- Chat para mostrar evaluaciones anteriores -->
+        <div class="chat" id="chat"></div>
+    </div>
+
+    <script>
+        // Función para calificar el día con emojis
+        function calificarDia(calificacion) {
+            document.getElementById("justificacion").value = "Calificación: " + calificacion + "\n\npor qqq...";
+        }
+
+        // Función para guardar la evaluación
+        function guardarEvaluacion() {
+            const calificacion = document.getElementById("justificacion").value;
+            if (!calificacion.trim()) {
+                alert("Por favor, escribe tu justificación antes de enviar.");
+                return;
+            }
+
+            // Obtener la fecha y hora actual
+            const fecha = new Date();
+            const fechaHora = `${fecha.toLocaleDateString()} ${fecha.toLocaleTimeString()}`;
+
+            // Crear el mensaje del chat
+            const mensaje = `
+                <div class="chat-message">
+                    <strong>${calificacion}</strong>
+                    <div class="fecha">${fechaHora}</div>
+                </div>
+            `;
+
+            // Mostrar el mensaje en el chat
+            const chat = document.getElementById("chat");
+            chat.innerHTML = mensaje + chat.innerHTML; // Nuevo mensaje en la parte superior
+
+            // Guardar en localStorage
+            localStorage.setItem("evaluaciones", chat.innerHTML);
+
+            // Limpiar el área de texto
+            document.getElementById("justificacion").value = "";
+        }
+
+        // Función para borrar el historial
+        function borrarHistorial() {
+            if (confirm("¿Estás seguro de que quieres borrar el historial de evaluaciones?")) {
+                // Eliminar el contenido del localStorage
+                localStorage.removeItem("evaluaciones");
+
+                // Limpiar el chat en la interfaz
+                document.getElementById("chat").innerHTML = "";
+            }
+        }
+
+        // Cargar las evaluaciones guardadas desde localStorage
+        window.onload = function() {
+            const savedEvaluaciones = localStorage.getItem("evaluaciones");
+            if (savedEvaluaciones) {
+                document.getElementById("chat").innerHTML = savedEvaluaciones;
+            }
+        }
+    </script>
+</body>
+</html>
